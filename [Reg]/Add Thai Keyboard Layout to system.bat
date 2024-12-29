@@ -1,0 +1,1 @@
+reg add "HKCUKeyboard LayoutPreload" /v 2 /t REG_SZ /d 0000041e

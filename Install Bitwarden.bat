@@ -1,0 +1,1 @@
+winget install Bitwarden.bitwarden  --accept-package-agreements --accept-source-agreements -h

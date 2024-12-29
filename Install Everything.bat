@@ -1,0 +1,1 @@
+winget install voidtools.Everything  --accept-package-agreements --accept-source-agreements -h

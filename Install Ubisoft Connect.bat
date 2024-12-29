@@ -1,0 +1,1 @@
+winget install Ubisoft.Connect  --accept-package-agreements --accept-source-agreements -h

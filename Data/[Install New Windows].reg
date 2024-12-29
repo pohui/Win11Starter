@@ -1,0 +1,111 @@
+Windows Registry Editor Version 5.00
+
+; Add This PC to Desktop
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+ [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+
+; Set File Explorer launch to This PC
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"LaunchTo"=dword:00000001 		
+"Hidden"=dword:00000001			;Show hidden file
+"HideFileExt"=dword:00000000	;Show file extension
+
+; Disable Recent Folder In Quick Access
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowCloudFilesInQuickAccess"=dword:00000000
+"ShowRecent"=dword:00000000
+"ShowFrequent"=dword:00000000
+
+;Remove "- Shortcut" when do a shortcut
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"link"=hex:00,00,00,00			
+
+[Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies]
+"ConfirmFileDelete"=dword:00000001 ;Prompt before delete
+
+;Verbose Shutdown-Startup State
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"verbosestatus"=dword:00000001
+
+;Take Ownership
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+; Disable Enhanced Pointer Precision
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseThreshold1"="0"
+"MouseThreshold2"="0"
+"MouseSpeed"="0"
+
+;Add Thai Keyboard Layout to system
+[HKEY_CURRENT_USER\Keyboard Layout\Preload]
+"2"="0000041e"
+
+;Grave Accent to change language
+[HKEY_CURRENT_USER\Keyboard Layout\Toggle]
+"Language Hotkey"="4"
+"Hotkey"="4"
+
+;Change Time Zone TO GMT+07 (ICT)
+
+[HKEY_LOCAL_MACHINE\System\ControlSet001\Control\TimeZoneInformation]
+"DaylightName"="@tzres.dll,-561"
+"DaylightBias"=dword:00000000
+"Bias"=dword:fffffe5c
+"StandardStart"=hex(3):00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"DaylightStart"=hex(3):00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"StandardName"="@tzres.dll,-562"
+"ActiveTimeBias"=dword:fffffe5c
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+; Set System theme to black (not Explorer.exe)
+"SystemUsesLightTheme"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; ShowTaskViewButton
+"ShowTaskViewButton"=dword:00000000
+; Disable News
+"TaskbarDa"=dword:00000000 
+; Left Position
+"TaskbarAl"=dword:00000000 
+; Disable Theme Chat
+"TaskbarMn"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+; Set Search Box to Hide
+"SearchboxTaskbarMode"=dword:00000000
+
+;Show Hidden File
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000000
+
+;Show Hidden File
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Hidden"=dword:00000001
+
+;Show Seconds In System Clock
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSecondsInSystemClock"=dword:00000001
+
+;Remove 260 Character Path Limit
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"LongPathsEnabled"=dword:00000001
+
+;Classic/Restore Right-Click Menu
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
+@=""
+
+;Hide_duplicate_removable_drives_from_navigation_pane_of_File_Explorer
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\DelegateFolders\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}]

@@ -1,0 +1,1 @@
+winget install Twilio.Authy  --accept-package-agreements --accept-source-agreements -h

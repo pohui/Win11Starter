@@ -1,0 +1,1 @@
+$pwd;$CurrentPath = (Get-Location).Path;Add-AppXPackage -Path 'cd $pwd\Data\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
